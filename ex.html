@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna - Period Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="custom-shape-divider-top-1738755801">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    <header style="padding: 0;">
+        <div class="logo" style="margin-left: 10px;">LunaFlow</div>
+        <nav class="k" >
+            <button class="active">Dashboard</button>
+            <button>People</button>
+            <button>Hiring</button>
+            <button>Devices</button>
+            <button>Apps</button>
+            <button>Salary</button>
+            <button>Calendar</button>
+            <button>Reviews</button>
+            <div class="nav-icons">
+                <!-- Use Font Awesome icons -->
+                <button class="icon-btn"><i class="fas fa-cogs"></i></button> <!-- ⚙️ -->
+                <button class="icon-btn"><i class="fas fa-bell"></i></button> <!-- 🔔 -->
+                <button class="icon-btn"><i class="fas fa-user"></i></button> <!-- 👤 -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <header>
+            <h1>Welcome back, <span id="userName">Sarah</span></h1>
+            <div class="cycle-stats">
+                <div class="stat">
+                    <span id="cycleLength">28</span>
+                    <p>Cycle Length</p>
+                </div>
+                <div class="stat">
+                    <span id="periodLength">5</span>
+                    <p>Period Days</p>
+                </div>
+                <div class="stat">
+                    <span id="daysUntil">14</span>
+                    <p>Days Until Next</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="card cycle-tracker">
+                <h3>Cycle Progress</h3>
+                <div class="cycle-progress">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                    </svg>
+                    <div class="cycle-day">Day 14</div>
+                </div>
+            </div>
+
+            <div class="card analytics">
+                <h3>Symptom Trends</h3>
+                <canvas id="symptomsChart"></canvas>
+            </div>
+
+            <div class="card mood-analytics">
+                <h3>Mood Analysis</h3>
+                <canvas id="moodChart"></canvas>
+            </div>
+
+            <div class="card symptoms">
+                <h3>Today's Symptoms</h3>
+                <div class="symptom-tags" id="symptomTags"></div>
+            </div>
+
+            <div class="card mood-tracker">
+                <h3>Today's Mood</h3>
+                <div class="mood-grid">
+                    <button class="mood-btn" data-mood="happy">😊</button>
+                    <button class="mood-btn" data-mood="sad">😔</button>
+                    <button class="mood-btn" data-mood="angry">😠</button>
+                    <button class="mood-btn" data-mood="neutral">😐</button>
+                </div>
+            </div>
+
+            <div class="card calendar">
+                <h3>September 2024</h3>
+                <div class="calendar-grid" id="calendar"></div>
+            </div>
+
+            <div class="card sleep-tracking">
+                <h3>Sleep Pattern</h3>
+                <canvas id="sleepChart"></canvas>
+            </div>
+
+            <div class="card predictions">
+                <h3>Predictions</h3>
+                <div class="prediction-list">
+                    <div class="prediction-item">
+                        <span>Next Period</span>
+                        <span id="nextPeriod">Sep 20, 2024</span>
+                    </div>
+                    <div class="prediction-item">
+                        <span>Fertile Window</span>
+                        <span id="fertileWindow">Sep 5-10, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

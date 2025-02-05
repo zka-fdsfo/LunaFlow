@@ -1,0 +1,125 @@
+:root {
+    --primary: #FF69B4;
+    --primary-dark: #FF1493;
+    --background: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text: #ffffff;
+    --text-secondary: #b3b3b3;
+}
+
+.onboarding-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.steps-container {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.step {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--primary-dark);
+    border-radius: 8px;
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.symptom-grid,
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.symptom-checkbox,
+.goal-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border: 2px solid var(--primary-dark);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.symptom-checkbox:hover,
+.goal-checkbox:hover {
+    background-color: var(--primary-dark);
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-btn,
+.finish-btn {
+    background-color: var(--primary);
+    color: white;
+    float: right;
+}
+
+.prev-btn {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border: 2px solid var(--primary);
+}
+
+.next-btn:hover,
+.finish-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.prev-btn:hover {
+    background-color: var(--primary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
